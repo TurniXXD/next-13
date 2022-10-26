@@ -17,15 +17,15 @@ const movies = [
 
 export default function Layout({ children }: React.PropsWithChildren<{}>) {
   return (
-    <div>
-      <ul>
+    <div className="flex flex-row"> 
+      <ul className="flex flex-col w-2/12 p-10">
         {movies.map((movie => (
           <li key={movie.id}>
             <Link href={`/movies/${movie.id}`}>{movie.movie}</Link>
           </li>
         )))}
       </ul>
-      <div>
+      <div className="flex flex-col w-10/12">
         {children}
       </div>
     </div>
